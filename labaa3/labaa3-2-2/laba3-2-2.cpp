@@ -5,10 +5,10 @@ using namespace std;
 int main()
 {
 	setlocale(LC_CTYPE, "Russian");
-	long int m;
-	double a, b;
+	int m;
+	float a, b;
 
-	cin >> m;
+	scanf_s("%d", &m);
 	
 	if (m % 2 > 0) {
 		a = (m + 1) / 2 + 2;
@@ -19,6 +19,7 @@ int main()
 		b = m / 2 - 2.5;
 	};
 
-	cout << a << ' ' << b << endl;
-	cout << "Разница 5";
+	printf("%f\t",a);
+	printf("%f\t", b, "\n");
+	printf("Разница 5");
 }

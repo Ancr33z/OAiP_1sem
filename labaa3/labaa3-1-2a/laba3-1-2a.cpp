@@ -6,12 +6,12 @@ int main()
 {
 	setlocale(LC_CTYPE, "Russian");
 	int a, b, c;
-	cout << "Введите значение a и b:" << endl;
-	cin >> a >> b;
+	printf("Введите значение a и b:\n" );
+	scanf_s("%d %d", &a,&b);
 
 	c = a;
 	a = b;
 	b = c;
 
-	cout << "Значения именены : " << "a = " << a << ' ' << "b = " << b;
+	printf("Значения именены :a = %d %s %d",a,"b =", b);
 }

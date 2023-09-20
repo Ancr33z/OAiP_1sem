@@ -5,12 +5,12 @@ using namespace std;
 int main()
 {
 	setlocale(LC_CTYPE, "Russian");
-	double n, m, summ;
-	cout << "Введите значение n и m:" << endl;
-	cin >> n >> m;
+	float n, m, summ;
+	printf("Введите значение n и m:\n");
+	scanf_s("%f %f", &n, &m) ;
 	summ = m;
 	for (int i = 1; i < n; i++) {
 			
 	}
-	cout << "Количество часов работы всей бригады " << summ;
+	printf("Количество часов работы всей бригады: %f", summ);
 }

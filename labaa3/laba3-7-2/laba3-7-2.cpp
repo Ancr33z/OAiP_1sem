@@ -5,12 +5,12 @@ using namespace std;
 int main()
 {
 	setlocale(LC_CTYPE, "Russian");
-	long int L;
-	double s;
+	int L;
+	float s;
 
-	cin >> L;
+	scanf_s("%d", &L);
 	
 	s = pow(L, 2) / (4 * 3.14159265);
 
-	cout << "Площадь равна:" << s << endl;
+	printf("Площадь равна: %f",s);
 }
