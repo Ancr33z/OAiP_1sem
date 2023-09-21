@@ -7,12 +7,12 @@ int main()
 	setlocale(LC_CTYPE, "Russian");
 	int choose;
 	puts("Какой товар вы хотите купить? (1-Молочный, 2-Что-то сладкое)");
-	cin >> choose;
+	scanf_s("%d", &choose);
 	switch (choose)
 	{
 	case 1: {
 		puts("Какой именно молочный товар? (1-Молоко, 2-Кефир, 3-Сыр, 4-Йогурт");
-		cin >> choose;
+		scanf_s("%d", &choose);
 		switch (choose)
 		{
 		case 1: puts("Видимо любите молоко, хороший выбор"); break;
@@ -25,7 +25,7 @@ int main()
 	}
 	case 2: {
 		puts("Что именно? (1-Сникерс, 2-Печенье, 3-Выпечку)");
-		cin >> choose;
+		scanf_s("%d", &choose);
 		switch (choose)
 		{
 		case 1: puts("Сладкоежка)"); break;
