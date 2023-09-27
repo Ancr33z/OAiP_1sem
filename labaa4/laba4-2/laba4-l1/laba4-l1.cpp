@@ -6,20 +6,15 @@ int main()
 {
 	setlocale(LC_CTYPE, "Russian");
 	
-	float a, b, c, d, x1, x2;
+	int x1,y1,x2,max;
+	max = x1;
 
-	cin >> a >> b >> c;
+	cin >> x1 >> y1 >> x2;
 	
-	d = pow(b, 2) - 4 * a * c;
-	if (d < 0) {
-		cout << "Корней нет";
-	}
-	else
-	{
-		x1 = (- b + sqrt(d)) / 2 * a;
-		x2 = (- b - sqrt(d)) / 2 * a;
-		cout << "x1=" << x1 << ", x2=" << x2;
+	if (max > y1) {
+
 	}
 	
+
 	return 0;
 }

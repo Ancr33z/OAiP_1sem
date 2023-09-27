@@ -20,6 +20,6 @@ int main()
 	};
 
 	printf("%f\t",a);
-	printf("%f\t", b, "\n");
+	printf("%f\t", b, "\n");	
 	printf("Разница 5");
 }

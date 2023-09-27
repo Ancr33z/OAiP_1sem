@@ -1,4 +1,4 @@
-﻿Сборка начата 20.09.2023 22:46:05.
+﻿Сборка начата 27.09.2023 18:46:54.
 Уровень детализации журнала: Normal.     1>Проект "D:\education\raboti\Labi\OAiP_1sem\labaa3\laba3-7-2\laba3-7-2.vcxproj" в узле 2 (целевые объекты Build).
      1>InitializeBuildStatus:
          Создание "x64\Debug\laba3-7-2.tlog\unsuccessfulbuild", так как было задано "AlwaysCreate".
@@ -9,10 +9,7 @@
      1>D:\education\raboti\Labi\OAiP_1sem\labaa3\laba3-7-2\laba3-7-2.cpp(13,16): warning C4244: =: преобразование "double" в "float", возможна потеря данных
        Link:
          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\bin\HostX64\x64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\education\raboti\Labi\OAiP_1sem\labaa3\x64\Debug\laba3-7-2.exe" /INCREMENTAL /ILK:"x64\Debug\laba3-7-2.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\education\raboti\Labi\OAiP_1sem\labaa3\x64\Debug\laba3-7-2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\education\raboti\Labi\OAiP_1sem\labaa3\x64\Debug\laba3-7-2.lib" /MACHINE:X64 "x64\Debug\laba3-7-2.obj"
-         LINK : не найден или не выполнена сборка D:\education\raboti\Labi\OAiP_1sem\labaa3\x64\Debug\laba3-7-2.exe при последней инкрементной компоновке; выполняется полная компоновка
          laba3-7-2.vcxproj -> D:\education\raboti\Labi\OAiP_1sem\labaa3\x64\Debug\laba3-7-2.exe
-       TlogCleanup:
-         Следующие элементы будут удалены из tlogs, так как они были удалены из проекта или сборки: D:\education\raboti\Labi\OAP\labaa3\laba03\laba3-7-2\laba3-7-2.cpp.
        FinalizeBuildStatus:
          Файл "x64\Debug\laba3-7-2.tlog\unsuccessfulbuild" удаляется.
          Обращение к "x64\Debug\laba3-7-2.tlog\laba3-7-2.lastbuildstate".
@@ -27,4 +24,4 @@
     Предупреждений: 1
     Ошибок: 0
 
-Прошло времени 00:00:00.72
+Прошло времени 00:00:01.15
