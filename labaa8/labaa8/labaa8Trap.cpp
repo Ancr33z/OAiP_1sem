@@ -16,13 +16,14 @@ int main()
 	x = a;
 	s = 0;
 	do {
-		s = s + h * (f(x) + f(x + h)) / 2;
-		x = x + h;
+		s += h * ((f(x) - 4) + (f(x + h) - 4)) / 2;
+		x += h;
 	} while (x > (b - h));
 
-	z = (f(a) + f(b)) / 2 * (b - a) + (f(x)/12*pow((b-a),3));
-
-	printf("%le", z);
+	//z = (f(a) + f(b)) / 2 * (b - a) + (f(x)/12*pow((b-a),3));
+	//s += h * ((pow(x, 2) - 4) + (pow(x + h, 2) - 4)) / 2;
+	//x += h;
+	printf("%le", s);
 
 	return 0;
 }

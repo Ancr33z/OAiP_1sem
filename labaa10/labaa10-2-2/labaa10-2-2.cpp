@@ -18,7 +18,7 @@ void main()
 	_itoa_s(A, rezult, 2);
 	cout << rezult << endl;
 
-	for (i = n; i > 0; i--)
+	for (i = 0; i < n; i++)
 	{
 		A = A | (1 << --p);
 	}
