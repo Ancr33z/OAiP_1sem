@@ -5,22 +5,20 @@ int main()
 {
     setlocale(LC_ALL, "rus");
     float p, q, r, rhombusr;
-    printf("%s", "Введите диагонали ромбовидного отверстия p, q: ");
-    //cout << "Введите диагонали ромбовидного отверстия p, q: " << endl;
+
+    printf("%s", "Введите диагонали p, q: ");
     scanf_s("%f%f", &p, &q );
-    //cin >> p >> q;
+
     printf("%s", "Введите радиус шара r: ");
-    //cout << "Введите радиус шара r: " << endl;
     scanf_s("%f", &r);
-    //cin >> r;
 
     rhombusr = p * q / (2 * sqrt(pow(p, 2) + pow(q, 2))); //расчёт радиуса ромба
 
     if (rhombusr > r) {
-        cout << "Шар сможет пройти" << endl;
+        printf("Шар сможет пройти\n");
     }
     else {
-        cout << "Шар не сможет пройти" << endl;
+        printf("Шар не сможет пройти\n");
     }
     return 0;
 }

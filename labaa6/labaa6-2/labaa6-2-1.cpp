@@ -20,8 +20,8 @@ int main()
 			z = (d * a / 4) / (3 * a * b - exp(1 + d) / 100);
 		}
 
-		cout << "z = " << z << endl;
-		cout << "d = " << d << endl;
+		printf("%f",z);
+		printf("%f",d);
 
 	}
 

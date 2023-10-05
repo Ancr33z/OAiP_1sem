@@ -6,7 +6,7 @@ int main()
 {
 	setlocale(LC_CTYPE, "Russian");
 
-	double y, z, a = 2e-3, b = 8.5, n = 2, i;
+	float y, z, a = 2e-3, b = 8.5, n = 2, i;
 	i = 1;
 
 	while (i <= 3) {

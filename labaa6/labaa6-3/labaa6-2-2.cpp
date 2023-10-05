@@ -11,7 +11,7 @@ int main()
 	summ = 0;
 	for (i = 0; i < 200; i ++) {
 
-		if (i % 3 ==0) {
+		if (i % 3 == 0) {
 			summ += i;
 		}
 	}

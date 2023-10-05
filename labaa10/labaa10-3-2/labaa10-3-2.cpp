@@ -1,29 +1,68 @@
-﻿#include <iostream>
-#include <bitset>
+﻿#include<iostream>
 using namespace std;
-int main()
+
+void main()
 {
-	setlocale(LC_CTYPE, "Russian");
-	int A, n, i;
-	int maskA = 32766;
-	char tmp[33];
+	setlocale(LC_ALL, "Rus");
 
-	cout << "Введите число  A ";
-	cin >> A;                         
-	//cout << "Введите n ";
-	//cin >> n;
-	_itoa_s(A, tmp, 2);
-	cout << tmp << endl;
-	_itoa_s(maskA, tmp, 2);
-	cout << "Маска для А: " << tmp << endl;
-	_itoa_s((A & maskA), tmp, 2);
-	cout << "Выделенные биты А: " << tmp << endl;
+	int A, B;
+	char arrA[16], arrB[16], arrA_new[16], arrB_new[16];
 
-	_itoa_s(~((A & maskA)), tmp, 2);
-	cout << "Перевернутые биты А: " << tmp << endl;
+	printf("Введите число А,B = ");
+	scanf_s("%d%d", &A, &B);
 
-	_itoa_s((A ^ ~(A & maskA)),tmp,2);
-	cout << tmp;
+	_itoa_s(A, arrA, 2);
+	cout << "A в 2-ой с/с= " << arrA << endl;
 
-	return 0;
+	_itoa_s(B, arrB, 2);
+	cout << "B в 2-ой с/с= " << arrB << endl;
+
+	int n, p;
+	cout << "Введите n,p: ";
+	scanf_s("%d%d", &n, &p);
+
+
+	int num = p - n;
+	for (num; num < p; num++)
+	{
+		int j = 0;
+		if (arrA[num] == '0')
+		{
+
+			arrA_new[j] = '1';
+			j++;
+		}
+
+		else
+		{
+			arrA_new[j] = '0';
+			j++;
+		}
+
+	}
+
+	int q,m;
+	printf("Введите q,m: ");
+	scanf_s("%d%d", &q, &m);
+
+	for (int i = 0; i < strlen(arrB); i++)
+	{
+		if (i >= q && i <= q + m)
+		{
+			int j = 0;
+			arrB[i] = arrA_new[j];
+			j++;
+
+			cout << arrB[i];
+		}
+
+		else
+		{
+			cout << arrB[i];
+		}
+	}
+
+
+
+	cout << endl;
 }

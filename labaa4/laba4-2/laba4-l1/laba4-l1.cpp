@@ -8,16 +8,15 @@ int main()
 	
 	int x1,y1,x2,max;
 
-	cin >> x1 >> y1 >> x2;
+	scanf_s("%d%d%d", &x1, &y1, &x2);
 	max = x1;
 
 	if (max < y1) {
 		max = y1;
 	}
-	if(max <x2){
+	if (max < x2) {
 		max = x2;
 	}
-	
 	printf("%d", max);
 
 	return 0;

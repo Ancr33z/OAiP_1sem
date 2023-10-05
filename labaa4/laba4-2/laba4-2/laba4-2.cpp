@@ -6,15 +6,13 @@ int main()
 {
 	setlocale(LC_CTYPE, "Russian");
 	int a, b, c;
-	scanf_s("%d", &a);
-	scanf_s("%d", &b);
-	scanf_s("%d", &c);
-		
+	scanf_s("%d%d%d", &a,&b,&c);
+	
 	if (a == b || b == c || a == c ) {
-		cout << "Пара равных между собой чисел есть";
+		printf("Пара равных между собой чисел есть");
 	}
-	else{
-		cout << "Пары равных между собой чисел нет";
+	else {
+		printf("Пары равных между собой чисел нет");
 	}
 
 }

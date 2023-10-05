@@ -6,13 +6,12 @@ int main()
 {
 	setlocale(LC_CTYPE, "Russian");
 
-	double y, z, a = 2e-3, b = 8.5, n = 2, i, j;
+	float y, z, a = 2e-3, b = 8.5, n = 2, i, j;
 
 
 	for (j = 0; j < 3; j++) {
-		printf("Enter i:");
+		//printf("Enter i:");
 		scanf_s("%le", &i);
-
 
 		y = sqrt(i * b - pow(b, 2) * a);
 		z = y * tan(n / 4) - exp(1 + b);

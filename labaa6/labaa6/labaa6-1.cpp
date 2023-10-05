@@ -20,8 +20,8 @@ int main()
 		{
 			z = pow(sin(y), 2);
 		}
-		cout << "z = " << z << endl;
-		cout << "y = " << y << endl;
+		printf("%f\n", z);
+		printf("%f\n", y);
 
 	}
 

@@ -2,32 +2,27 @@
 #include <iomanip>
 using namespace std;
 
-
-double f(int x) {
-	return pow(cos(x), 3);
-}
-
 int main()
 {
-	double i, s1, s2, a = 4, z, b = 7, h, x, n = 200;
+	float i, s1, s2, a = 4, z, b = 7, h, x, n = 200;
 	setlocale(LC_CTYPE, "Russian");
 
-	h = (b - a) / n;
+	h = (b - a) / 2*n;
 	x = a + 2*h;
 	s1 = 0;
 	s2 = 0;
 	i = 1;
 	do {
-		s2 = s2 + f(x);
+		s2 = s2 + pow(cos(x), 3);
 		x = x + h;
-		s1 = s1 + f(x);
+		s1 = s1 + pow(cos(x), 3);
 		x = x + h;
-		i = i + 1;
-	} while (x > (b - h));
+		i+=1;
+	} while (i < n);
 
-	z = h / 3 * (f(a) + 4 * f(a + h) + 4 * s1 + 2 * s2 + f(b));
+	z = h / 3 * (pow(cos(a), 3) + 4 * pow(cos(a+h), 3) + 4 * s1 + 2 * s2 + pow(cos(b), 3));
 
-	printf("%le", z);
+	printf("%f", z);
 
 	return 0;
 }

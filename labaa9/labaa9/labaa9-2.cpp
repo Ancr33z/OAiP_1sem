@@ -8,7 +8,7 @@ int main()
 	const int maxSize = 99;
 	int K[maxSize], L[(maxSize + 1) / 2], M[(maxSize + 1) / 2];
 	int i, f, j, n, size;
-	printf("Введите размер массива, не больше 99 \n");
+	printf("Введите размер массива, не больше 100 \n");
 	scanf_s("%d", &size);
 	n = size;
 	j = 0;
@@ -30,11 +30,11 @@ int main()
    }
    printf("\n");
    for (i = 0; i < f; i++) {
-	   printf("%d%c", M[i], ' ');
+	   printf("%d ", M[i]);
    }
    printf("\n");
    for (i = 0; i < j; i++) {
-	   printf("%d%c", L[i], ' ');
+	   printf("%d ", L[i]);
    }
 
    printf("\n%d %d",j,f);
