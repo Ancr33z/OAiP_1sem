@@ -1,68 +1,57 @@
-﻿#include<iostream>
+﻿#include <iostream>
+#include <cstdio>
+#include <cstdlib>
 using namespace std;
 
-void main()
+int main()
 {
-	setlocale(LC_ALL, "Rus");
+    setlocale(LC_ALL, "Rus");
 
-	int A, B;
-	char arrA[16], arrB[16], arrA_new[16], arrB_new[16];
+    int A, B, i, n, p, q, m;
+    char arrA[33], arrB[33];
 
-	printf("Введите число А,B = ");
-	scanf_s("%d%d", &A, &B);
-
-	_itoa_s(A, arrA, 2);
-	cout << "A в 2-ой с/с= " << arrA << endl;
-
-	_itoa_s(B, arrB, 2);
-	cout << "B в 2-ой с/с= " << arrB << endl;
-
-	int n, p;
-	cout << "Введите n,p: ";
-	scanf_s("%d%d", &n, &p);
+    printf("Введите число А, B ");
+    scanf_s("%d%d", &A, &B);
 
 
-	int num = p - n;
-	for (num; num < p; num++)
-	{
-		int j = 0;
-		if (arrA[num] == '0')
-		{
+    _itoa_s(A, arrA, sizeof(arrA), 2);
+    printf("A в 2-ой с/с = \n%s\n", arrA);
 
-			arrA_new[j] = '1';
-			j++;
-		}
+    _itoa_s(B, arrB, sizeof(arrB), 2);
+    printf("B в 2-ой с/с = \n%s\n", arrB);
 
-		else
-		{
-			arrA_new[j] = '0';
-			j++;
-		}
+    printf("Введите n, p: ");
+    scanf_s("%d%d", &n, &p);
 
-	}
+    char* arrA_new = new char[sizeof(arrA)];
+    strcpy_s(arrA_new, sizeof(arrA), arrA);
 
-	int q,m;
-	printf("Введите q,m: ");
-	scanf_s("%d%d", &q, &m);
+    for (i = n; i < p && arrA_new[i]; i++)
+    {
+        if (arrA_new[i] == '0')
+        {
+            arrA_new[i] = arrA_new[i] | '1';
+        }
+        else
+        {
+            arrA_new[i] = arrA_new[i] & '0';
+        }
+    }
 
-	for (int i = 0; i < strlen(arrB); i++)
-	{
-		if (i >= q && i <= q + m)
-		{
-			int j = 0;
-			arrB[i] = arrA_new[j];
-			j++;
+    printf("Введите q, m: ");
+    scanf_s("%d%d", &q, &m);
 
-			cout << arrB[i];
-		}
+    for (i = q; i <= q  + m && arrB[i]; i++)
+    {
+        if (i >= 0)
+        {
+            arrB[i] = arrA_new[i - q];
+        }
+    }
 
-		else
-		{
-			cout << arrB[i];
-		}
-	}
+    printf("Измененное B в 2-ой с/с = %s\n", arrB);
 
+    delete[] arrA_new;
 
-
-	cout << endl;
+    return 0;
 }

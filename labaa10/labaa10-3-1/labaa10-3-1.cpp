@@ -5,7 +5,7 @@ int main()
 	setlocale(LC_CTYPE, "Russian");
 	char tmp[33];
 	int A, i, count = 0, c = 13;
-	printf("Введите число=");
+	printf("Введите число ");
 	scanf_s("%d", &A);
 
 	_itoa_s(A, tmp, 2);
@@ -21,11 +21,11 @@ int main()
 	}
 	for (i = count-2; i > count-16; i--) {
 		if (tmp[i] == '1') {
-			tmp[i] = '0';
+			tmp[i] = tmp[i] & '0';
 		}
 		else
 		{
-			tmp[i] = '1';
+			tmp[i] = tmp[i] | '1';
 		}
 	}
 
