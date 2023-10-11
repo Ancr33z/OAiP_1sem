@@ -1,52 +1,29 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <iostream>
-using namespace std;
+﻿#include <iostream>
 
-int findzero(const int*, int, int);
-void printmass(const int*, int, int);
+int Sum(const int args[], int count);
 
-int main(void)
-{
-	setlocale(LC_ALL, "Rus");
-	int* N;
-	int count = 0, i, j, n, m, result;
-	printf("Введите размер массива(n,m)");
-	scanf_s("%d%d", &n, &m);
-	N = new int[n * m];
-	for (i = 0; i < n; i++) {
-		for (j = 0; j < m; j++)
-		{
-			printf("Введите элемант %d -й строки %d -го столбца ", i + 1, j + 1);
-			scanf_s("%d", &N[i * m + j]);
-		}
-	}
-	result = findzero(N, n, m);
-	printmass(N, n, m);
+int main() {
+    setlocale(LC_ALL, "Rus");
+    int count = 0, n;
+    printf("Введите количество аргументов");
+    scanf_s("%d", &n);
+    int* values = (int*)malloc(0);
+    printf("Введите аргументы");
+    do
+    {
+        values= (int*)realloc(values, sizeof(int) * ++count);
+        scanf_s("%d", &values[count - 1]);
+    } while (count < n);
 
-	printf("Количество строк с нулем: %d \n", result);
-	delete(N);
+    int result = Sum(values, n-1);
+    printf("Сумма: %d", result);
+    return 0;
 }
 
-int  findzero(const int* N, int n, int m) {
-	int count = 0, i, j;
-	for (i = 0; i < n; i++) {
-		for (j = 0; j < m; j++) {
-			if (N[i * m + j] == 0) {
-				count++;
-				break;
-			}
-		}
-	}
-
-	return count;
-}
-void printmass(const int* N, int n, int m) {
-	int i, j;
-	for (i = 0; i < n; i++) {
-		for (j = 0; j < m; j++) {
-			printf("%d ", N[i * m + j]);
-		}
-		printf("\n");
-	}
+int Sum(const int args[], int count) {
+    int sum = 0;
+    for (int i = 0; i < count; i++) {
+        sum += args[i]*args[i+1];
+    }
+    return sum;
 }

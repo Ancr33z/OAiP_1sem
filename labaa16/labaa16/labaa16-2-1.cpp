@@ -3,8 +3,8 @@
 #include <iostream>
 using namespace std;
 
-int findzero(const int*, int, int);
-void printmass(const int*, int, int);
+int Findzero(const int*, int, int);
+void Printmass(const int*, int, int);
 
 int main(void)
 {
@@ -21,14 +21,14 @@ int main(void)
 			scanf_s("%d", &N[i * m + j]);
 		}
 	}
-	result = findzero(N,n,m);
-	printmass(N,n,m);
+	result = Findzero(N,n,m);
+	Printmass(N,n,m);
 	
 	printf("Количество строк с нулем: %d \n", result);
 	delete(N);
 }
 
-int  findzero(const int *N,int n ,int m) {
+int  Findzero(const int *N,int n ,int m) {
 	int count = 0, i, j;
 	for (i = 0; i < n; i++) {
 		for (j = 0; j < m; j++) {
@@ -41,7 +41,7 @@ int  findzero(const int *N,int n ,int m) {
 
 	return count;
 }
-void printmass(const int *N, int n, int m) {
+void Printmass(const int *N, int n, int m) {
 	int i, j;
 	for (i = 0; i < n; i++) {
 		for (j = 0; j < m; j++) {

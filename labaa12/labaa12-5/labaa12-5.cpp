@@ -5,7 +5,6 @@ void main()
 {
 	setlocale(LC_ALL, "Rus");
 	char str[250], s1[250];
-
 	int i, pos1, pos2;
 	printf("Введите строку: ");
 	scanf_s("%s", str, 249);

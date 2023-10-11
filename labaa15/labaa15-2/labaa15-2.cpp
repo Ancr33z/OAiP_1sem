@@ -1,8 +1,4 @@
-﻿#include <cstring>
-#include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+﻿#include <iostream>
 
 using namespace std;
 
@@ -12,11 +8,11 @@ int main()
 {
 	setlocale(LC_ALL, "Rus");
 	int len;
+	char* str, *s1;
 	printf("Введите строку: ");
-	char *str = get_string(&len);
-	char *s1 = allocation(str);
+	str = get_string(&len);
+	s1 = allocation(str);
 	
-	 //*allocation(*str);
 	printf("%s", s1);
 	free(s1);
 	free(str);
@@ -27,7 +23,6 @@ char* get_string(int* len) {
 	*len = 0;
 	int capacity = 1;
 	char* str = (char*)malloc(sizeof(char));
-
 	char c = getchar();
 
 	while (c != '\n') {
@@ -62,12 +57,6 @@ char* allocation(char* str) {
 				break;
 			}
 		}
-	}
-
-	if (pos1 != -1 && pos2 != -1) {
-		int resultLen = pos2 - pos1 - 1;
-		char* result = (char*)malloc((resultLen + 1) * sizeof(char));
-
 	}
 
 	if (pos1 != -1 && pos2 != -1) {

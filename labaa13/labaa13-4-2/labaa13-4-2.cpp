@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 
-void main()
+int main()
 {
 	setlocale(LC_ALL, "Rus");
 	const int n = 100, m = 100;
@@ -24,7 +24,7 @@ void main()
 	}
 	arefAverage = sum / count;
 
-	for (i = 0; i < sizeR; i++) {
+	for (i = 0; i < sizeR; i++) { 
 		for (j = 0; j < sizeC; j++) {
 			if (*(*(arrA + i) + j) > arefAverage) {
 				quantity++;
@@ -34,4 +34,5 @@ void main()
 	printf("Среднее арифметическое: %f\n", arefAverage);
 	printf("Количество элементов больших среднего арифметического: %d\n", quantity);
 
+	return 0;
 }

@@ -1,8 +1,8 @@
 ﻿#include <iostream>
 using namespace std;
 
-float integ(float(*) (float), float, float, float);
-float f(float);
+float Integ(float(*) (float), float, float, float);
+float F(float);
 
 
 int main()
@@ -11,10 +11,10 @@ int main()
     float a, b, x, n, z;
     printf("Введите переменные a,b,n");
     scanf_s("%f%f%f", &a, &b, &n);
-    z = integ(f, a, b, n);
+    z = Integ(F, a, b, n);
     printf("Интеграл = %f", z);
 }
-float integ(float(*f) (float), float a, float b, float n) {
+float Integ(float(*f) (float), float a, float b, float n) {
     float x, s1, s2, h;
     int i;
 
@@ -24,16 +24,16 @@ float integ(float(*f) (float), float a, float b, float n) {
     s2 = 0;
     i = 1;
     do {
-        s1 += f(x);
+        s1 += F(x);
         x += h;
-        s2 += f(x);
+        s2 += F(x);
         x += h;
         i++;
     } while (i < n);
     
-    return h / 3 * (f(a) + 4 * f(a + h) + 4 * s1 + 2 * s2 + f(b));
+    return h / 3 * (F(a) + 4 * F(a + h) + 4 * s1 + 2 * s2 + F(b));
 
 }
-float f(float x) {
+float F(float x) {
     return pow(cos(x), 3);
 }
