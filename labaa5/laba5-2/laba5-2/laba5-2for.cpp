@@ -10,14 +10,13 @@ int main()
 
 
 	for (j = 0; j < 3; j++) {
-		//printf("Enter i:");
 		scanf_s("%le", &i);
 
-		y = sqrt(i * b - pow(b, 2) * a);
+		y = sqrt(i * b + pow(b, 2) * a);
 		z = y * tan(n / 4) - exp(1 + b);
 
-		printf("y = %5.3f\t", y);
-		printf("z = %5.3f\n", z);
+		printf("y = %.3f\t", y);
+		printf("z = %.3f\n", z);
 	}
 
 	return 0;

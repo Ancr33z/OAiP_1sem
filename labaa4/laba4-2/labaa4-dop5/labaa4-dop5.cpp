@@ -6,13 +6,13 @@ int main()
     setlocale(LC_ALL, "rus");
     float p, q, r, rhombusr;
 
-    printf("%s", "Введите диагонали p, q: ");
+    printf("Введите диагонали p, q: ");
     scanf_s("%f%f", &p, &q );
 
-    printf("%s", "Введите радиус шара r: ");
+    printf("Введите радиус шара r: ");
     scanf_s("%f", &r);
 
-    rhombusr = p * q / (2 * sqrt(pow(p, 2) + pow(q, 2))); //расчёт радиуса ромба
+    rhombusr = p * q / (2 * sqrt(pow(p, 2) + pow(q, 2)));
 
     if (rhombusr > r) {
         printf("Шар сможет пройти\n");

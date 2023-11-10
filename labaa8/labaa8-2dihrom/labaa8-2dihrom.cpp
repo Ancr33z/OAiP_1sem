@@ -1,27 +1,21 @@
-﻿#include <iostream> 
-#include <iomanip>
+﻿#include <iostream>
+#include <windows.h>
+#include <cmath>
 using namespace std;
-
-
-
 int main()
 {
-	float a, b, x, e = 0.0001;
-	setlocale(LC_CTYPE, "Rus");
-
-	scanf_s("%f%f", &a, &b);
-
-	do {
-		x = (a + b) / 2;
-		if ((cos(x) + x - 7) * (cos(a) + a - 7) > 0) {
-			b = x;
-		}
-		else {
-			a = x;
-		}
-	} while (abs(a - b) > 2 * e);
-
-	printf("%.4f", x);
-
-	return 0;
+    double a = 4, b = 7, e = 0.0001, x;
+    do
+    {
+        x = (a + b) / 2;
+        if ((cos(x) + x - 7) * (cos(a) + a - 7) <= 0)
+        {
+            b = x;
+        }
+        else
+        {
+            a = x;
+        }
+    } while (abs(a - b) > 2 * e);
+    cout << x;
 }

@@ -13,9 +13,14 @@ int main()
 	n = size;
 	j = 0;
 	f = 0;
+	int min = -99; 
+	int max = 99;  
+	int range = max - min + 1;
+	srand(time(NULL));
+
    for (i = 0; i < n; i++)
    {
-	   K[i] = rand() % 99;
+	   K[i] = (rand() % range) + min;
 	   printf("%d%c", K[i], ' ');
    }
    for (i = 0; i < n; i++) {

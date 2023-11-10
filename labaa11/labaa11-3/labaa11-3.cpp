@@ -38,10 +38,18 @@ int main()
 		for (i = 0; i < size; i++) {
 			printf("%d ", *(A + i));
 		}
+		printf("\n");
+		for (i = 0; i < size; i++) {
+			printf("%d ", *(B + i));
+		}
 	}
 	else {
 		for (i = 0; i < size; i++) {
 			printf("%d ", *(B + i));
+		}
+		printf("\n");
+		for (i = 0; i < size; i++) {
+			printf("%d ", *(A + i));
 		}
 	}
 	printf("\n");

@@ -8,33 +8,36 @@ int main()
 
 	const int maxSize = 99;
 	int K[maxSize];
-	int i, placeMin, placeMax, max, min, size, n;
+	int i, placeMin, placeMax, maxE, minE, size, n;
 
 	printf("Введите размер массива \n");
 	scanf_s("%d", &size);
 	n = size;
-
+	int min = -99;
+	int max = 99;
+	int range = max - min + 1;
+	srand(time(NULL));
 
 	for (i = 0; i < n; i++) {
-		K[i] = rand() % 100;
+		K[i] = (rand() % range) + min;
 		printf("%d%c", K[i], ' ');
 	}
-	min = K[1];
-	max = K[1];
+	minE = K[0];
+	maxE = K[0];
 
 	for (i = 0; i < n; i++) {
-		if (min > K[i]) {
-			min = K[i];
+		if (minE > K[i]) {
+			minE = K[i];
 			placeMin = i;
 		}
-		if (max < K[i]) {
-			max = K[i];
+		if (maxE < K[i]) {
+			maxE = K[i];
 			placeMax = i;
 		}
 	}
 
-	K[placeMin] = K[placeMax];
-	K[placeMax] = min;
+	K[placeMin] = maxE;
+	K[placeMax] = minE;
 	printf("\n");
 	for (i = 0; i < n; i++) {
 		printf("%d%c", K[i], ' ');

@@ -1,22 +1,21 @@
 ﻿#include <iostream>
 
+
 int main()
 {
 	using namespace std;
 	setlocale(LC_ALL, "Rus");
-		float m = 4, c = -0.045, b,g, i, j, sum = 1;
+	float m = 4, c = -0.045, b, g, j, sum = 1;
 
 	for (j = 1; j <= m; j++)
 	{
-		sum *= j;
+		printf("Введите b: ");
+		scanf_s("%f", &b);
+		sum *= pow((b + 1), 2);
 	}
 
-	for (i = 0; i < m; i++) 
-	{
-		scanf_s("%f", &b);
-		g = c * sum * pow((b + 1), 2);
-		printf("%f\n",g) ;
-	}	
+	g = c * sum;
+	printf("%f\n", g);
 
 	return 0;
 }

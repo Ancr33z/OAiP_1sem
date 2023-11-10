@@ -20,13 +20,13 @@ int main()
     _itoa_s(B, arrB, sizeof(arrB), 2);
     printf("B в 2-ой с/с = \n%s\n", arrB);
 
-    printf("Введите n, p: ");
+    printf("Введите количество битов (n), позицию (p): ");
     scanf_s("%d%d", &n, &p);
 
-    char* arrA_new = new char[sizeof(arrA)];
-    strcpy_s(arrA_new, sizeof(arrA), arrA);
+    char* arrA_new = new char [33];
+    strncpy_s(arrA_new, n+2, &arrA[p - n], n+1);
 
-    for (i = n; i < p && arrA_new[i]; i++)
+    for (i = 0; i <= n; i++)
     {
         if (arrA_new[i] == '0')
         {
@@ -38,14 +38,14 @@ int main()
         }
     }
 
-    printf("Введите q, m: ");
-    scanf_s("%d%d", &q, &m);
+    printf("Введите количество битов (m), позицию (q): ");
+    scanf_s("%d%d", &m, &q);
 
-    for (i = q; i <= q  + m && arrB[i]; i++)
+    for (i = q-m-1; i < q-1; i++)
     {
         if (i >= 0)
         {
-            arrB[i] = arrA_new[i - q];
+            arrB[i] = arrA_new[i - q+m+1];
         }
     }
 

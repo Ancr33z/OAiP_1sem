@@ -10,16 +10,8 @@ int main()
 
 	_itoa_s(A, tmp, 2);
 	printf("%s\n", tmp);
-	for (i = 0; i < 33; i++) {  
-		if (tmp[i] == '1') {      
-			count++;
-		}
-		else if (tmp[i] == '0')
-		{
-			count++;
-		}
-	}
-	for (i = count-2; i > count-16; i--) {
+
+	for (i = 1; i < 15; i++) {
 		if (tmp[i] == '1') {
 			tmp[i] = tmp[i] & '0';
 		}

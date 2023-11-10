@@ -1,28 +1,26 @@
 ﻿#include <iostream>
 using namespace std;
-void main()
+int main()
 {
 	setlocale(LC_CTYPE, "Russian");
 	int i, n, p;
 	int A;
-	char result[30];
+	char result[33];
 
-	cout << "Введите число: A";
-	cin >> A;
-	cout << "Введите количество битов: n ";
-	cin >> n;
-	cout << "Введите позицию: p ";
-	cin >> p;
+	printf("Введите число A: ");
+	scanf_s("%d", &A);
+	printf("Введите количество битов n: ");
+	scanf_s("%d", &n);
+	printf("Введите позицию p: ");
+	scanf_s("%d", &p);
 
-	p -= 1;
 	_itoa_s(A, result, 2);
-	cout << result << endl;
+	printf("Число А в 2-ой с/с:\n%s\n", result);
 
-	for (i = 0; i < n; i++)
+	for (i = p; i < n+p; i++)
 	{
-		A = A | (1 << --p);
+		result[i] = result[i] | 1;
 	}
-
-	_itoa_s(A, result, 2);
-	cout << result << endl;
+	printf("Изменённое число А в 2-ой с/с:\n%s\n", result);
+	return 0;
 }

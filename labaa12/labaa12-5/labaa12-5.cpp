@@ -21,6 +21,7 @@ void main()
 	}
 
 	strncpy_s(s1, &str[0], pos1);
+	s1[pos1 + 1] = '\0';
 	strncat_s(s1, &str[pos2 + 1], strlen(str) - pos2);
 	printf("%s", s1);
 }

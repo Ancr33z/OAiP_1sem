@@ -1,7 +1,7 @@
-﻿# include <cstring>
+﻿#include <cstring>
 #include <iostream>
 using namespace std;
-void main()
+int main()
 {
 	setlocale(LC_ALL, "Rus");
 	char str[250],s1[250];
@@ -15,4 +15,5 @@ void main()
 	strncpy_s(s1, &str[n-1], k);
 
 	printf("%s", s1);
+	return 0;
 }

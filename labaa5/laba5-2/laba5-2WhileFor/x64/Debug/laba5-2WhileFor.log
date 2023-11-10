@@ -1,4 +1,4 @@
-﻿Сборка начата 04.10.2023 20:59:17.
+﻿Сборка начата 11.10.2023 19:05:26.
 Уровень детализации журнала: Normal.     1>Проект "D:\education\raboti\Labi\OAiP_1sem\labaa5\laba5-2\laba5-2WhileFor\laba5-2WhileFor.vcxproj" в узле 2 (целевые объекты Build).
      1>InitializeBuildStatus:
          Создание "x64\Debug\laba5-2WhileFor.tlog\unsuccessfulbuild", так как было задано "AlwaysCreate".
@@ -10,10 +10,7 @@
      1>D:\education\raboti\Labi\OAiP_1sem\labaa5\laba5-2\laba5-2WhileFor\laba5-2WhileFor.cpp(19,12): warning C4244: =: преобразование "double" в "float", возможна потеря данных
        Link:
          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\bin\HostX64\x64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\education\raboti\Labi\OAiP_1sem\labaa5\laba5-2\x64\Debug\laba5-2WhileFor.exe" /INCREMENTAL /ILK:"x64\Debug\laba5-2WhileFor.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\education\raboti\Labi\OAiP_1sem\labaa5\laba5-2\x64\Debug\laba5-2WhileFor.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\education\raboti\Labi\OAiP_1sem\labaa5\laba5-2\x64\Debug\laba5-2WhileFor.lib" /MACHINE:X64 "x64\Debug\laba5-2WhileFor.obj"
-         LINK : не найден или не выполнена сборка D:\education\raboti\Labi\OAiP_1sem\labaa5\laba5-2\x64\Debug\laba5-2WhileFor.exe при последней инкрементной компоновке; выполняется полная компоновка
          laba5-2WhileFor.vcxproj -> D:\education\raboti\Labi\OAiP_1sem\labaa5\laba5-2\x64\Debug\laba5-2WhileFor.exe
-       TlogCleanup:
-         Следующие элементы будут удалены из tlogs, так как они были удалены из проекта или сборки: D:\education\raboti\Labi\OAP\labaa5\laba5-2\laba5-2WhileFor\laba5-2WhileFor.cpp.
        FinalizeBuildStatus:
          Файл "x64\Debug\laba5-2WhileFor.tlog\unsuccessfulbuild" удаляется.
          Обращение к "x64\Debug\laba5-2WhileFor.tlog\laba5-2WhileFor.lastbuildstate".
@@ -29,4 +26,4 @@
     Предупреждений: 2
     Ошибок: 0
 
-Прошло времени 00:00:00.92
+Прошло времени 00:00:01.04
