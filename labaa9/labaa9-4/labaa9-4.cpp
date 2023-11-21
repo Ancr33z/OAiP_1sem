@@ -5,17 +5,15 @@ using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "rus");
-
 	const int maxSize = 99;
 	int K[maxSize];
 	int i, placeMin, placeMax, maxE, minE, size, n;
-
-	printf("Введите размер массива \n");
-	scanf_s("%d", &size);
-	n = size;
 	int min = -99;
 	int max = 99;
 	int range = max - min + 1;
+	printf("Введите размер массива \n");
+	scanf_s("%d", &size);
+	n = size;
 	srand(time(NULL));
 
 	for (i = 0; i < n; i++) {

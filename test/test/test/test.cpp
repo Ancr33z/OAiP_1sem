@@ -1,18 +1,48 @@
-﻿#include <iostream> 
-#include <iomanip>
+﻿#include <iostream>
+#include <bitset>
 using namespace std;
-
 int main() {
-	setlocale(LC_CTYPE, "Russian");
-	char c;
-	cout << "Введите символ: ";
-	cin >> c;
-	cout << setw(16) << setfill(c) << c << endl;
-	cout << setw(16) << setfill(c) << c << endl;
-	cout << setw(16) << setfill(c) << c << endl;
-	cout << setw(16) << setfill(c) << c << endl;
-	cout << setw(16) << setfill(c) << c << endl;
-	cout << setw(16) << setfill(c) << c << endl;
-	cout << setw(16) << setfill(c) << c << endl;
+
+	int A, B, n, p, m, q;
+	char tmp[33];
+
+	setlocale(LC_ALL, "rus");
+
+	// Вводим целые числа A и B
+	cout << "Введите целое число A: ";
+	cin >> A;
+	cout << "Введите целое число B: ";
+	cin >> B;
+
+	// Вводим позицию p и количество битов n в числе A
+	cout << "Введите позицию p (с нуля): ";
+	cin >> p;
+	cout << "Введите количество битов n: ";
+	cin >> n;
+
+	// Вводим позицию q и количество битов m в числе B
+	cout << "Введите позицию q (с нуля): ";
+	cin >> q;
+	cout << "Введите количество битов m: ";
+	cin >> m;
+
+	// Маска для инвертирования n битов влево от позиции p
+	int maskA = ((1 << n) - 1) << (p - n + 1);
+
+	// Маска для очистки m битов в B, начиная с позиции q
+	int maskB = ~(((1 << m) - 1) << q);
+
+	// Инвертируем биты в A
+	A = A ^ maskA;
+
+	// Очищаем биты в B
+	B = B & maskB;
+
+	// Вычисляем результат
+	B = B | ((A & maskA) >> (p - n + 1)) << q;
+	_itoa_s(B, tmp, 2);
+
+	cout << "Результат B после инверсии и замены: " << tmp << endl;
+
 	return 0;
 }

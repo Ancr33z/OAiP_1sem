@@ -8,14 +8,14 @@ int main()
 	const int maxSize = 99;
 	int K[maxSize], L[(maxSize + 1) / 2], M[(maxSize + 1) / 2];
 	int i, f, j, n, size;
+	int min = -99;
+	int max = 99;
+	int range = max - min + 1;	
 	printf("Введите размер массива, не больше 100 \n");
 	scanf_s("%d", &size);
 	n = size;
 	j = 0;
 	f = 0;
-	int min = -99; 
-	int max = 99;  
-	int range = max - min + 1;
 	srand(time(NULL));
 
    for (i = 0; i < n; i++)
@@ -46,4 +46,3 @@ int main()
    
    return 0;
 }
-

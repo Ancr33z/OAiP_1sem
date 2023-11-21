@@ -1,54 +1,18 @@
 ﻿#include <iostream>
+int sum(int n, ...);
+using namespace std;
 
-int Sum(const int args[], int count);
-
-int main() {
-    setlocale(LC_ALL, "Rus");
-    int count = 0, n, result;
-    printf("Введите количество аргументов: ");
-    scanf_s("%d", &n);
-    int* values = (int*)malloc(0);
-    printf("Введите аргументы: ");
-    do
-    {
-        values = (int*)realloc(values, sizeof(int) * ++count);
-        scanf_s("%d", &values[count - 1]);
-    } while (count < n);
-    count = 0;
-    result = Sum(values, n - 1);
-    printf("Сумма: %d\n", result);
-    printf("Введите количество аргументов: ");
-    scanf_s("%d", &n);
-    printf("Введите аргументы: ");
-    do
-    {
-        values = (int*)realloc(values, sizeof(int) * ++count);
-        scanf_s("%d", &values[count - 1]);
-    } while (count < n);
-    count = 0;
-
-    result = Sum(values, n - 1);
-    printf("Сумма: %d\n", result);
-
-    printf("Введите количество аргументов: ");
-    scanf_s("%d", &n);
-    printf("Введите аргументы: ");
-    do
-    {
-        values = (int*)realloc(values, sizeof(int) * ++count);
-        scanf_s("%d", &values[count - 1]);
-    } while (count < n);
-
-    result = Sum(values, n - 1);
-
-    printf("Сумма: %d\n", result);
-    return 0;
+void main()
+{
+	cout << sum(6, 4, 5, 1, 2, 3, 0) << std::endl;
+	cout << sum(2, 34, 4445);
 }
 
-int Sum(const int args[], int count) {
-    int sum = 0,i;
-    for (i = 0; i < count; i++) {
-        sum += args[i] * args[i + 1];
-    }
-    return sum;
+int sum(int n, ...)
+{
+	int* p = &n;
+	int sum = 0;	
+	for (int i = 1; i <= n; i++)
+		sum += *(++p);
+	return *p;
 }
