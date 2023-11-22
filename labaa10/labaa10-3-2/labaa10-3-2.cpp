@@ -33,13 +33,13 @@ int main()
             count++;
         }
         else if (arrB[i] == '0') {
-            count++;                            // 2145 5435 
+            count++;                            
         }
         else break;
     }
 
 
-    for (i = 0; i <= n; i++) // тут мы инвертируем биты в полученом ранее массиве
+    for (i = 0; i < n; i++) // тут мы инвертируем биты в полученом ранее массиве
     {
         if (arrA_new[i] == '0')
         {
@@ -51,12 +51,13 @@ int main()
         }
     }
 
+
     printf("Введите количество битов (m), позицию (q): ");
     scanf_s("%d%d", &m, &q);
 
-    for (i = count-q; i < count-q+m+1; i++) // тут мы вставляем измененные биты в число Б
+    for (i = count-q-m; i < count-q; i++) // тут мы вставляем измененные биты в число Б
     {
-            arrB[i-1] = arrA_new[i -count+q];
+            arrB[i] = arrA_new[i -count+q+m];
     }
 
     printf("Измененное B в 2-ой с/с = %s\n", arrB);
