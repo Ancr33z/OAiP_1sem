@@ -6,11 +6,15 @@ int main()
 	char tmp[33];
 	int A, B, maskA = 124;
 	int maskB = ((~maskA - 3)<<1)+7;
-	cout << "Первое число="; cin >> A;
-	cout << "Второе число="; cin >> B;
+	cout << "Первое число="; 
+	cin >> A;
+	cout << "Второе число="; 
+	cin >> B;
 
-	_itoa_s(A, tmp, 2); cout << "A=" << tmp << endl;
-	_itoa_s(B, tmp, 2); cout << "B=" << tmp << endl;
+	_itoa_s(A, tmp, 2); 
+	cout << "A=" << tmp << endl;
+	_itoa_s(B, tmp, 2);
+	cout << "B=" << tmp << endl;
 	_itoa_s(maskA, tmp, 2);
 	cout << "Маска для А: " << tmp << endl;
 	_itoa_s((A & maskA)<<1, tmp, 2);

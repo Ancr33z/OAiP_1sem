@@ -5,21 +5,24 @@ int main()
 	setlocale(LC_ALL, "rus");
 	int i, size, n, countA = 0, countB = 0, t;
 	int A[999], B[999];
-
+	int min = -99;
+	int max = 99;
+	int range = max - min + 1;
 	printf("Введите количество элементов(n)");
 	scanf_s("%d", &n);
 	size = n;
+	srand(time(NULL));
 	printf("Введите t: ");
 	scanf_s("%d", &t);
 
 	for (i = 0; i < size; i++) {
-		*(A + i) = rand() % 99;
+		*(A + i) = (rand() % range) + min;
 		printf("%d ", *(A + i));
 	}
 
 	printf("\n");
 	for (i = 0; i < size; i++) {
-		*(B + i) = rand() % 99;
+		*(B + i) = (rand() % range) + min;
 		printf("%d ", *(B + i));
 	}
 
