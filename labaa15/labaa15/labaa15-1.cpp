@@ -18,18 +18,18 @@ float Integ(float(*f) (float), float a, float b, float n) {
     float x, s1, s2, h;
     int i;
 
-    h = (b - a) / (2 * n);
-    x = a + 2 * h;
-    s1 = 0;
-    s2 = 0;
-    i = 1;
-    do {
-        s1 += F(x);
-        x += h;
-        s2 += F(x);
-        x += h;
-        i++;
-    } while (i < n);
+	h = (b - a) / (2 * n);
+	x = a + 2 * h;
+	s1 = 0;
+	s2 = 0;
+	i = 1;
+	do {
+		s2 = s2 + pow(cos(x), 3);
+		x = x + h;
+		s1 = s1 + pow(cos(x), 3);
+		x = x + h;
+		i++;
+	} while (i < n);
     
     return h / 3 * (F(a) + 4 * F(a + h) + 4 * s1 + 2 * s2 + F(b));
 

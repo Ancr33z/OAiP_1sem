@@ -1,48 +1,36 @@
-﻿#include <iostream>
-#include <bitset>
+﻿#include<iostream>
+#include<windows.h>
 using namespace std;
-int main() {
 
-	int A, B, n, p, m, q;
-	char tmp[33];
+int main()
+{
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    setlocale(LC_ALL, "ru");
 
-	setlocale(LC_ALL, "rus");
+    char arr[256], t[256];
+    int n = 0;
+    bool isWriting = false;
 
-	// Вводим целые числа A и B
-	cout << "Введите целое число A: ";
-	cin >> A;
-	cout << "Введите целое число B: ";
-	cin >> B;
+    cout << "Введите строку:\t";
+    cin.getline(arr, 256);
 
-	// Вводим позицию p и количество битов n в числе A
-	cout << "Введите позицию p (с нуля): ";
-	cin >> p;
-	cout << "Введите количество битов n: ";
-	cin >> n;
 
-	// Вводим позицию q и количество битов m в числе B
-	cout << "Введите позицию q (с нуля): ";
-	cin >> q;
-	cout << "Введите количество битов m: ";
-	cin >> m;
+    for (int i = 0; (arr[i] != '\0' && i != 256) && (t[n] != '\0'); i++) {
 
-	// Маска для инвертирования n битов влево от позиции p
-	int maskA = ((1 << n) - 1) << (p - n + 1);
+        if (arr[i] == '*') {
+            if (isWriting) {
+                t[n] = '\0';
+            }
+            isWriting = !isWriting;
 
-	// Маска для очистки m битов в B, начиная с позиции q
-	int maskB = ~(((1 << m) - 1) << q);
 
-	// Инвертируем биты в A
-	A = A ^ maskA;
 
-	// Очищаем биты в B
-	B = B & maskB;
-
-	// Вычисляем результат
-	B = B | ((A & maskA) >> (p - n + 1)) << q;
-	_itoa_s(B, tmp, 2);
-
-	cout << "Результат B после инверсии и замены: " << tmp << endl;
-
-	return 0;
+        }
+        else if (isWriting) {
+            t[n] = arr[i];
+            n++;
+        }
+    }
+    cout << "Текст заключенный в '*'" << t << endl;
 }

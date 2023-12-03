@@ -1,68 +1,41 @@
 ﻿#include <iostream>
-#include <cstdio>
-#include <cstdlib>
-using namespace std;
+#include <bitset>
 
-int main()
-{
-    setlocale(LC_ALL, "Rus");
+void main() {
+    using namespace std;
 
-    int A, B, i, n, p, q, m,count=0;
-    char arrA[33], arrB[33];
+    setlocale(LC_ALL, "Russian");
 
-    printf("Введите число А, B ");
-    scanf_s("%d%d", &A, &B);
+    int A, B, n, p, m, q;
 
+    cout << "Введите целое число A: ";
+    cin >> A;
 
-    _itoa_s(A, arrA, sizeof(arrA), 2);
-    printf("A в 2-ой с/с = \n%s\n", arrA);
+    cout << "Введите целое число B: ";
+    cin >> B;
 
-    _itoa_s(B, arrB, sizeof(arrB), 2);
-    printf("B в 2-ой с/с = \n%s\n", arrB);
+    cout << "Введите количество битов n ";
+    cin >> n;
 
-    printf("Введите количество битов (n), позицию (p): ");
-    scanf_s("%d%d", &n, &p);
+    cout << "Введите позицию p ";
+    cin >> p;
 
-    //Начнём тут
-    char* arrA_new = new char [33];    // тут создаём динамический массив
+    cout << "Введите количество битов m ";
+    cin >> m;
 
-    strncpy_s(arrA_new, n+2, &arrA[p - n], n+1); // тут мы копируем биты которые выбрали позицием (p), и кол-вом (n) в массив
-
-    for (i = 0; i < 33; i++) {       // тут мы считаем длинну второго числа 
-        if (arrB[i] == '1') {        // впоследствии начинать отсчёт с конца строки
-            count++;
-        }
-        else if (arrB[i] == '0') {
-            count++;                            
-        }
-        else break;
-    }
+    cout << "Введите позицию q ";
+    cin >> q;
 
 
-    for (i = 0; i < n; i++) // тут мы инвертируем биты в полученом ранее массиве
-    {
-        if (arrA_new[i] == '0')
-        {
-            arrA_new[i] = arrA_new[i] | '1';
-        }
-        else
-        {
-            arrA_new[i] = arrA_new[i] & '0';
-        }
-    }
+    int maskB = ((1 << m) - 1) << q;
+    int maskA = ((1 << n) - 1) << p;
+    int bitsFromA = (A & maskA) >> p;
+    B = (B & ~maskB) | (bitsFromA << q);
+    int invertMask = ((1 << n) - 1) << p;
+    A ^= invertMask;
 
 
-    printf("Введите количество битов (m), позицию (q): ");
-    scanf_s("%d%d", &m, &q);
 
-    for (i = count-q-m; i < count-q; i++) // тут мы вставляем измененные биты в число Б
-    {
-            arrB[i] = arrA_new[i -count+q+m];
-    }
-
-    printf("Измененное B в 2-ой с/с = %s\n", arrB);
-
-    delete[] arrA_new;
-
-    return 0;
+    cout << "Изменённое число A в двоичной системе: " << bitset<32>(A) << endl;
+    cout << "Изменённое число B в двоичной системе: " << bitset<32>(B) << endl;
 }
