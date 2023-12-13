@@ -4,6 +4,7 @@ using namespace std;
 
 char* allocation(char*);
 char* get_string(int*);
+
 int main()
 {
 	setlocale(LC_ALL, "Rus");
@@ -26,7 +27,7 @@ char* get_string(int* len) {
 	char c = getchar();
 
 	while (c != '\n') {
-		str[(*len)++] = c;
+		*(str+(*len)++) = c;
 
 		if (*len >= capacity) {
 			capacity *= 2;
@@ -36,7 +37,7 @@ char* get_string(int* len) {
 		c = getchar();
 	}
 
-	str[*len] = '\0';
+	*(str+(*len)) = '\0';
 
 	return str;
 }

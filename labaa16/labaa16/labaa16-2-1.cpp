@@ -3,8 +3,8 @@
 #include <iostream>
 using namespace std;
 
-int Findzero(const int*, int, int);
-void Printmass(const int*, int, int);
+int findzero(const int*, int, int);
+void printmass(const int*, int, int);
 
 int main(void)
 {
@@ -14,21 +14,22 @@ int main(void)
 	printf("Введите размер массива(n,m)");
 	scanf_s("%d%d", &n, &m);
 	N = new int[n * m];
-	for (i = 0; i < n; i++) {
+	for (i = 0; i < n; i++) 
+	{
 		for (j = 0; j < m; j++)
 		{
 			printf("Введите элемант %d -й строки %d -го столбца ", i + 1, j + 1);
 			scanf_s("%d", &N[i * m + j]);
 		}
 	}
-	result = Findzero(N,n,m);
-	Printmass(N,n,m);
+	result = findzero(N,n,m);
+	printmass(N,n,m);
 	
 	printf("Количество строк с нулем: %d \n", result);
-	delete(N);
+	delete[] N;
 }
 
-int  Findzero(const int *N,int n ,int m) {
+int  findzero(const int *N,int n ,int m) {
 	int count = 0, i, j;
 	for (i = 0; i < n; i++) {
 		for (j = 0; j < m; j++) {
@@ -41,8 +42,8 @@ int  Findzero(const int *N,int n ,int m) {
 
 	return count;
 }
-void Printmass(const int *N, int n, int m) {
-	int i, j;
+void printmass(const int *N, int n, int m) {
+	int i, j; 
 	for (i = 0; i < n; i++) {
 		for (j = 0; j < m; j++) {
 			printf("%d ", N[i * m + j]);

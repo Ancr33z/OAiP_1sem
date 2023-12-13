@@ -1,20 +1,19 @@
 ﻿#include <iostream>
 using namespace std;
 
-float Integ(float(*) (float), float, float, float);
-float F(float);
-
+float integ(float(*) (float), float, float, float);
+float f(float);
 
 int main()
 {
     setlocale(LC_ALL, "Rus");
-    float a, b, x, n, z;
-    printf("Введите переменные a,b,n");
+    float a, b, n, z;
+    printf("Введите переменные a,b,n: ");
     scanf_s("%f%f%f", &a, &b, &n);
-    z = Integ(F, a, b, n);
+    z = integ(*f, a, b, n);
     printf("Интеграл = %f", z);
 }
-float Integ(float(*f) (float), float a, float b, float n) {
+float integ(float(*f) (float), float a, float b, float n) {
     float x, s1, s2, h;
     int i;
 
@@ -31,9 +30,9 @@ float Integ(float(*f) (float), float a, float b, float n) {
 		i++;
 	} while (i < n);
     
-    return h / 3 * (F(a) + 4 * F(a + h) + 4 * s1 + 2 * s2 + F(b));
+	return h / 3 * (f(a) + 4 * f(a + h) + 4 * s1 + 2 * s2 + f(b));
 
 }
-float F(float x) {
+float f(float x) {
     return pow(cos(x), 3);
 }
